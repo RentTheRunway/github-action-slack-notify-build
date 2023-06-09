@@ -7,7 +7,7 @@ A [Slack bot token](https://api.slack.com/docs/token-types) is required to use t
 ## Usage
 
 ```yaml
-uses: RentTheRunway/github-action-slack-notify-build@v1
+uses: RentTheRunway/github-action-slack-notify-build@v2
 with:
   token: ${{ secrets.SLACK_BOT_TOKEN }}
   channel: app-alerts
@@ -35,7 +35,7 @@ Note: You must assign a step `id` to the first Slack notification step in order 
 - name: Notify slack success
   if: success()
   id: slack # IMPORTANT: reference this step ID value in future Slack steps
-  uses: RentTheRunway/github-action-slack-notify-build@v1
+  uses: RentTheRunway/github-action-slack-notify-build@v2
   with:
     token: ${{ secrets.SLACK_BOT_TOKEN }}
     channel: app-alerts
@@ -46,7 +46,7 @@ Note: You must assign a step `id` to the first Slack notification step in order 
   # ... your test step here
 - name: Notify slack success
   if: success()
-  uses: RentTheRunway/github-action-slack-notify-build@v1
+  uses: RentTheRunway/github-action-slack-notify-build@v2
   with:
     # Updates existing message from the first step
     token: ${{ secrets.SLACK_BOT_TOKEN }}
@@ -65,7 +65,7 @@ You can use the `success()` and `failure()` conditional checks within your workf
   # ... your test step here
 - name: Notify slack success
   if: success()
-  uses: RentTheRunway/github-action-slack-notify-build@v1
+  uses: RentTheRunway/github-action-slack-notify-build@v2
   with:
     token: ${{ secrets.SLACK_BOT_TOKEN }}
     channel: app-alerts
@@ -74,7 +74,7 @@ You can use the `success()` and `failure()` conditional checks within your workf
 
 - name: Notify slack fail
   if: failure()
-  uses: RentTheRunway/github-action-slack-notify-build@v1
+  uses: RentTheRunway/github-action-slack-notify-build@v2
   with:
     token: ${{ secrets.SLACK_BOT_TOKEN }}
     channel: app-alerts
