@@ -12,6 +12,8 @@ const { buildSlackAttachments, formatChannelName } = require('./src/utils');
     const token = core.getInput('token');
     const slack = new WebClient(token);
 
+    core.warning('This action has been deprecated');
+
     if (!channel && !core.getInput('channel_id')) {
       core.setFailed(`You must provider either a 'channel' or a 'channel_id'.`);
       return;
