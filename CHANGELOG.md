@@ -3,6 +3,8 @@
 - Updated action runtime to node24 (Node 24 LTS, npm 12)
 - Replaced @zeit/ncc with @vercel/ncc
 - Ran npm audit fix and refreshed package-lock.json
+- CI now runs unit tests instead of live Slack notifications
+- Added unit tests for action entrypoint; pinned repo env in util tests
 
 # v2 - 5/18/2023
 
