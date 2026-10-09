@@ -9,12 +9,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
-      - name: Use Node.js v12.x
-        uses: actions/setup-node@v1
+      - name: Use Node.js v24.x
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 24
 
       - name: Notify slack
         id: slack
