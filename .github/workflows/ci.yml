@@ -5,7 +5,7 @@ on:
   - pull_request
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,20 +16,8 @@ jobs:
         with:
           node-version: 24
 
-      - name: Notify slack
-        id: slack
-        uses: ./
-        with:
-          token: ${{ secrets.SLACK_BOT_TOKEN }}
-          channel_id: plat-eng-notifications
-          status: STARTED
-          color: warning
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Notify slack success
-        uses: ./
-        with:
-          token: ${{ secrets.SLACK_BOT_TOKEN }}
-          message_id: ${{ steps.slack.outputs.message_id }}
-          channel_id: plat-eng-notifications
-          status: SUCCESS
-          color: good
+      - name: Run unit tests
+        run: npm test
