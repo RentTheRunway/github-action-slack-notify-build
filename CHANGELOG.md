@@ -1,3 +1,9 @@
+# Unreleased
+
+- Updated action runtime to node24 (Node 24 LTS, npm 12)
+- Replaced @zeit/ncc with @vercel/ncc
+- Ran npm audit fix and refreshed package-lock.json
+
 # v2 - 5/18/2023
 
 - Updated to node16
